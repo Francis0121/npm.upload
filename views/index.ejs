@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <title>Upload</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/default.css">
+  <link rel="stylesheet" type="text/css" href="/css/layout.css">
+
+  <script src="/javascript/jquery-1.11.2.min.js"></script>
+  <script src="/javascript/jquery.json.js"></script>
+
+  <script>
+    var upload = {};
+  </script>
+
+</head>
+<body>
+
+<section class="upload_wrap">
+  <header>
+    <a href="/"><h1>Spring 4.1.1 File upload example</h1></a>
+  </header>
+
+  <article>
+    <form name="upload" action="/" method="post" enctype="multipart/form-data">
+      <label for="file" class="label <%=isError ? 'label_error' : 'label_default'%>">File Upload</label>
+      <input type="file" name="file" id="file" class="input <%=isError ? 'input_error' : 'input_default'%>">
+      <% if (isError){ %>
+      <span class="error"><%=errorMessage %></span>
+      <% } %>
+      <button type="submit" class="btn">submit</button>
+    </form>
+  </article>
+
+  <footer>
+    Copyright &copy; Francis.kim. All right reserved.
+  </footer>
+</section>
+
+<script src="/javascript/common.js"></script>
+
+</body>
 </html>
