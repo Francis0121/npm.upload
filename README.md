@@ -1,4 +1,4 @@
-# upload.npm
+# Node.js Express File Upload
 Node.js + Express simple upload project
 
 # Node.js + Express File Upload
