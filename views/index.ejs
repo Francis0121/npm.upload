@@ -23,8 +23,8 @@
 
   <article>
     <form name="upload" action="/" method="post" enctype="multipart/form-data">
-      <label for="file" class="label <%=isError ? 'label_error' : 'label_default'%>">File Upload</label>
-      <input type="file" name="file" id="file" class="input <%=isError ? 'input_error' : 'input_default'%>">
+      <label for="filedata" class="label <%=isError ? 'label_error' : 'label_default'%>">File Upload</label>
+      <input type="file" name="filedata" id="filedata" class="input <%=isError ? 'input_error' : 'input_default'%>">
       <% if (isError){ %>
       <span class="error"><%=errorMessage %></span>
       <% } %>
