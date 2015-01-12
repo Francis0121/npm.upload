@@ -3,14 +3,18 @@ var router = express.Router();
 var fs = require('fs');
 var path = require('path');
 
+var inputName = 'filedata';
+
 router.get('/', function(req, res) {
-  res.render('index', { isError : false });
+  res.render('index', { isError : false , inputName : inputName });
 });
 
 router.post('/', function(req, res) {
 
+  console.log(req.files[inputName]);
+  
   if(req.files.filedata === undefined){
-    res.render('index', { isError : true, errorMessage : 'File is empty'});
+    res.render('index', { isError : true, errorMessage : 'File is empty', inputName : inputName });
     return;
   }
 
