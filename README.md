@@ -1,6 +1,3 @@
-# Node.js Express File Upload
-Node.js + Express simple upload project
-
 # Node.js + Express File Upload
 
 This is a simple file upload project. Project used [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/).
