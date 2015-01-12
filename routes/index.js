@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 var inputName = 'filedata';
+var fileAbsolutePath = '/home/pi/upload/';
 
 router.get('/', function(req, res) {
   res.render('index', { isError : false , inputName : inputName });
@@ -11,16 +12,16 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
 
-  console.log(req.files[inputName]);
-  
-  if(req.files.filedata === undefined){
+  var file = req.files[inputName];
+
+  if(file === undefined){
     res.render('index', { isError : true, errorMessage : 'File is empty', inputName : inputName });
     return;
   }
 
-  fs.readFile(req.files.filedata.path, function(error, data){
+  fs.readFile(file.path, function(error, data){
     
-    var filePath = path.join(__dirname, '../public/upload/') + req.files.filedata.name;
+    var filePath = fileAbsolutePath + file.name;
     
     fs.writeFile(filePath, data, function(error){
       if(error){
